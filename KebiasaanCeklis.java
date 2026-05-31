@@ -12,6 +12,12 @@ public class KebiasaanCeklis extends Kebiasaan {
     }
 
     @Override
+    public void rekamProgresHarian(double nilai) {
+        // Untuk jenis ceklis, input angka juga dianggap sebagai konfirmasi
+        this.statusKonfirmasi = true;
+    }
+
+    @Override
     public double hitungMatriks() {
         return this.statusKonfirmasi ? 100.0 : 0.0;
     }

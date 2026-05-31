@@ -1,4 +1,4 @@
-public abstract class Kebiasaan implements SiklusHarian{
+public abstract class Kebiasaan implements SiklusHarian {
     protected String namaKebiasaan;
     protected int rekorBeruntun;
 
@@ -8,8 +8,6 @@ public abstract class Kebiasaan implements SiklusHarian{
     }
 
     public abstract void rekamProgresHarian();
-    public abstract double hitungMatriks();
-
     public abstract void rekamProgresHarian(double nilai);
     public abstract double hitungMatriks();
 }

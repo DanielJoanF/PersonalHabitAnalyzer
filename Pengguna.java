@@ -1,28 +1,24 @@
-public class Pengguna {
-    private String namaPengguna;
-    private int jumlahKebiasaan;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Pengguna(String namaPengguna, int jumlahKebiasaan) {
-        this.namaPengguna = namaPengguna;
-        this.jumlahKebiasaan = jumlahKebiasaan;
+public class Pengguna {
+    private String nama;
+    private List<Kebiasaan> daftarKebiasaan;
+
+    public Pengguna(String nama) {
+        this.nama = nama;
+        this.daftarKebiasaan = new ArrayList<>();
     }
 
-    public void definisikanKebiasaanBaru(kebiasaan k){
-        if (this.jumlahKebiasaan >= this.daftarKebiasaan.length * 2){
-            System.arraycopy(this.daftarKebiasaan, 0, temp, 0, this.daftarKebiasaan.length);
-            this.daftarKebiasaan = temp;
-        }
-        this.daftarKebiasaan[this.jumlahKebiasaan] = k;
-        this.jumlahKebiasaan++;
+    public void definisiKebiasaanBaru(Kebiasaan k) {
+        this.daftarKebiasaan.add(k);
     }
 
     public void analisisMatriks() {
-        System.out.println("Analisis Matriks untuk Pengguna: " + this.namaAtauUsername);
-        for (int i = 0; i < this.jumlahKebiasaan; i++) {
-            Kebiasaan k = this.daftarKebiasaan[i];
-            double progres = k.hitungMatriks();
-            System.out.printf("- %s | Rekor Beruntun: %d hari | Progres Hari Ini: %.1f%%\n",
-                    k.namaKebiasaan, k.rekorBeruntun, progres);
+        System.out.println("Analisis Matriks untuk: " + this.nama);
+        for (Kebiasaan k : this.daftarKebiasaan) {
+            System.out.printf("- %s: %.2f%% (Rekor beruntun: %d)%n",
+                k.namaKebiasaan, k.hitungMatriks(), k.rekorBeruntun);
         }
     }
 }

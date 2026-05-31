@@ -1,4 +1,3 @@
-public class SiklusHarian {
-    void resetStatusSiklusHari() {
-    }
+public interface SiklusHarian {
+    void resetStatusSiklusHari();
 }
