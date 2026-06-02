@@ -24,11 +24,6 @@ public class KebiasaanCeklis extends Kebiasaan {
 
     @Override
     public void resetStatusSiklusHari() {
-        if (this.statusKonfirmasi) {
-            this.rekorBeruntun++;
-        } else {
-            this.rekorBeruntun = 0;
-        }
         this.statusKonfirmasi = false;
     }
 }

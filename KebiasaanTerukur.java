@@ -28,11 +28,6 @@ public class KebiasaanTerukur extends Kebiasaan {
 
     @Override
     public void resetStatusSiklusHari() {
-        if (this.inputNilaiAngka >= this.targetHarian) {
-            this.rekorBeruntun++;
-        } else {
-            this.rekorBeruntun = 0;
-        }
         this.inputNilaiAngka = 0.0;
     }
 }
