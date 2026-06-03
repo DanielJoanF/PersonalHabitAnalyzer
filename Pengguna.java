@@ -9,7 +9,7 @@ public class Pengguna {
 
     public Pengguna(String nama) {
         this.nama = nama;
-        this.daftarKebiasaan = new Kebiasaan[MAX_KEBIASAAN];
+        this.daftarKebiasaan = new ArrayList<>();
         this.jumlahKebiasaan = 0;
     }
 
@@ -25,7 +25,7 @@ public class Pengguna {
     public void analisisMatriks() {
         System.out.println("Analisis Matriks untuk: " + this.nama);
         for (int i = 0; i < jumlahKebiasaan; i++) {
-            Kebiasaan k = daftarKebiasaan[i];  
+            Kebiasaan k = daftarKebiasaan.get(i);  
            System.out.printf("- %s: %.2f%% (Rekor beruntun: %d)%n",
                 k.namaKebiasaan, k.hitungMatriks(), k.rekorBeruntun);
         }
@@ -33,7 +33,7 @@ public class Pengguna {
 
     public void jalankanRecap(){
         for (int i = 0; i < jumlahKebiasaan; i++) {
-            daftarKebiasaan[i].cetakRecap();
+            daftarKebiasaan.get(i).cetakRecap();
         }
     }
 }

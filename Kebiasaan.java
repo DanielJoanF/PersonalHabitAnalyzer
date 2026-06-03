@@ -27,23 +27,23 @@ public abstract class Kebiasaan implements SiklusHarian {
         }
 
         //logika streak (harus 100%)
-        if(skor == 100){
+        if (skor == 100) {
             hitungMinimalStreak++;
             //menghitung berapa hari berturut-turut mencapai 100%
-            if(hitungMinimalStreak >= 2){
+            if (hitungMinimalStreak >= 2) {
                 //jika hari ke-2 sukses 100%, maka rekor beruntun bertambah
-                if(hitungMinimalStreak == 2){
+                if (hitungMinimalStreak == 2) {
                     rekorBeruntun = 2;
                 } else {
                     rekorBeruntun++;
+                }
             }
-        }
-    }else {
+        } else {
             rekorBeruntun = 0; //reset jika tidak mencapai 100%
             hitungMinimalStreak = 0; //reset jika tidak mencapai 100%
         }
-    if(rekorBeruntun == 7){
-        System.out.println("Selamat! Rp100.000 telah masuk ke rekening Anda!");
+        if (rekorBeruntun == 7) {
+            System.out.println("Selamat! Kamu telah mencapai rekor konsisten 1 minggu!");
         }
     }
 }
